@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: services-1
+      author: carlos.gutierrez
+      comment: "Services Table"
+      changes:
+        - createTable:
+            tableName: services
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: id_pk
+              - column:
+                  name: type
+                  type: varchar(100)

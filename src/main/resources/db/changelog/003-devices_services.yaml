@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: devices-services-1
+      author: carlos.gutierrez
+      comment: "Devices Services Table"
+      changes:
+        - createTable:
+            tableName: devices_services
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: device_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: BIGINT
+              - column:
+                  name: price
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: insert_date
+                  type: datetime
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: device_id
+            baseTableName: devices_services
+            constraintName: fk_devices
+            referencedColumnNames: id
+            referencedTableName: devices
+        - addForeignKeyConstraint:
+            baseColumnNames: service_id
+            baseTableName: devices_services
+            constraintName: fk_services
+            referencedColumnNames: id
+            referencedTableName: services

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: devices-1
+      author: carlos.gutierrez
+      comment: "Devices Table"
+      changes:
+        - createTable:
+            tableName: devices
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                      nullable: false
+                      primaryKey: true
+              - column:
+                  name: system_name
+                  type: varchar(200)
+                  constraints:
+                      nullable: false
+              - column:
+                  name: type
+                  type: varchar(100)
+

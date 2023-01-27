@@ -1,0 +1,10 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  initial_data
+       author:  carlos.gutierrez
+       changes:
+         -  sqlFile:
+             dbms: 'mysql'
+             splitStatements:  true
+             path:  db/sql/initial_data.sql
+             stripComments:  true

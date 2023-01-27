@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-devices.yaml
+  - include:
+      file: db/changelog/002-services.yaml
+  - include:
+      file: db/changelog/003-devices_services.yaml
+  - include:
+      file: db/changelog/004-initial_data.yaml
+
+
